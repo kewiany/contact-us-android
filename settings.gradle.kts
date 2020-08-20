@@ -1,6 +1,6 @@
+include("logic")
 include("core")
 include("app")
-//include("buildSrc")
 
 pluginManagement {
     repositories {
