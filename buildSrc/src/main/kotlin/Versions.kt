@@ -1,5 +1,6 @@
 object Versions {
     const val kotlin = "1.3.71"
+    const val kotest = "4.2.0"
 }
 
 object AndroidSdkVersions {

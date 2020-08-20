@@ -16,3 +16,12 @@ object Library {
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
     }
 }
+
+object TestLibrary {
+
+    object Kotest {
+        const val framework = "io.kotest:kotest-runner-junit5-jvm:${Versions.kotest}.RC2"
+        const val assertions = "io.kotest:kotest-assertions-core-jvm:${Versions.kotest}"
+        const val property = "io.kotest:kotest-property-jvm:${Versions.kotest}"
+    }
+}

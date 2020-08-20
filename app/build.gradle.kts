@@ -29,3 +29,7 @@ android {
 dependencies {
     implementation(project(":core"))
 }
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+}

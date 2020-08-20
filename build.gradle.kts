@@ -3,6 +3,9 @@ buildscript {
     extra["appCompat"] = Library.AndroidX.appCompat
     extra["core"] = Library.AndroidX.core
     extra["constraintLayout"] = Library.AndroidX.constraintLayout
+    extra["kotestFramework"] = TestLibrary.Kotest.framework
+    extra["kotestAssertions"] = TestLibrary.Kotest.assertions
+    extra["kotestProperty"] = TestLibrary.Kotest.property
 
     repositories {
         google()
