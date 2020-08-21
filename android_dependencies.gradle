@@ -1,0 +1,5 @@
+dependencies {
+    implementation appCompat
+    implementation core
+    implementation constraintLayout
+}

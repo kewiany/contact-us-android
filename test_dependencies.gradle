@@ -2,4 +2,6 @@ dependencies {
     testImplementation kotestFramework
     testImplementation kotestAssertions
     testImplementation kotestProperty
+    testImplementation coroutinesTest
+    testImplementation junit
 }

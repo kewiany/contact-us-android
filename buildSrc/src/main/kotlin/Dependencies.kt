@@ -15,6 +15,9 @@ object Library {
         const val appCompat = "androidx.appcompat:appcompat:1.1.0"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
     }
+
+    const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinx_coroutines}"
+    const val coroutinesRX2 = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${Versions.kotlinx_coroutines}"
 }
 
 object TestLibrary {
@@ -24,4 +27,7 @@ object TestLibrary {
         const val assertions = "io.kotest:kotest-assertions-core-jvm:${Versions.kotest}"
         const val property = "io.kotest:kotest-property-jvm:${Versions.kotest}"
     }
+
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinx_coroutines}"
+    const val junit = "junit:junit:4.12"
 }

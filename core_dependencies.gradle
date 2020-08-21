@@ -1,6 +1,5 @@
 dependencies {
     implementation kotlinStdLib
-    implementation appCompat
-    implementation core
-    implementation constraintLayout
+    implementation coroutinesCore
+    implementation coroutinesRX2
 }

@@ -1,29 +1,19 @@
 package xyz.kewiany.contactus
 
-import io.kotest.core.spec.style.FreeSpec
-import io.kotest.core.spec.style.freeSpec
 import io.kotest.matchers.shouldBe
-import io.kotest.matchers.shouldNotBe
+import kotlinx.coroutines.test.runBlockingTest
+import xyz.kewiany.contactus.logic.MainLogic
 
-internal class MainLogicTest : FreeSpec({
-    val reusableTest = freeSpec {
-        "test2" - {
-            "assertion2" {
-                MainLogic() shouldNotBe ""
-            }
-        }
-    }
-    beforeEach {
-        println("before")
-    }
-    afterEach {
-        println("after")
-    }
-    include(reusableTest)
+internal class MainLogicTest : CustomFreeSpec({
+    var result: Boolean? = null
+
     "test" - {
+        testDispatcher.runBlockingTest {
+            result = MainLogic(testDispatcherProvider)
+        }
+
         "assertion" {
-            MainLogic() shouldBe true
+            result shouldBe true
         }
     }
 })
-

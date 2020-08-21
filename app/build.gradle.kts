@@ -5,6 +5,7 @@ plugins {
 }
 
 apply {
+    from("../android_dependencies.gradle")
     from("../core_dependencies.gradle")
 }
 

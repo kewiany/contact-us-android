@@ -1,6 +1,4 @@
-include("logic")
-include("core")
-include("app")
+include("app", "core", "logic")
 
 pluginManagement {
     repositories {
