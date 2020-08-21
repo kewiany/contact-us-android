@@ -8,6 +8,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.TestCoroutineScope
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.Rule
@@ -18,6 +19,7 @@ abstract class CustomFreeSpec constructor(
 ) : FreeSpec(body as FreeSpec.() -> Unit) {
 
     val testDispatcher = TestCoroutineDispatcher()
+    val testScope = TestCoroutineScope(testDispatcher)
     val testDispatcherProvider = object : DispatcherProvider {
         override fun default(): CoroutineDispatcher = testDispatcher
         override fun io(): CoroutineDispatcher = testDispatcher
