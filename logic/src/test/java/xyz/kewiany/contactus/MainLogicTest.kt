@@ -5,21 +5,25 @@ import kotlinx.coroutines.launch
 import xyz.kewiany.contactus.logic.MainLogic
 import xyz.kewiany.contactus.logic.common.MainViewState
 
-internal class MainLogicTest : CustomFreeSpec({
+internal class MainLogicTest : CustomFunSpec({
     val state = MainViewState()
     val stateT = MainStateT(state)
 
-    "test loading" - {
+    fun run() {
         testScope.launch {
             state.MainLogic(testDispatcherProvider)
         }
-        "load" {
-            stateT.state.commonViewState.isLoading shouldBe true
-        }
+    }
+
+    test("set loading to true") {
+        run()
+        stateT.state.commonViewState.isLoading shouldBe true
+    }
+
+    test("set loading to false after 1000 milliseconds") {
+        run()
         testScope.advanceTimeBy(1000)
-        "do not load" {
-            stateT.state.commonViewState.isLoading shouldBe false
-        }
+        stateT.state.commonViewState.isLoading shouldBe false
     }
 })
 
