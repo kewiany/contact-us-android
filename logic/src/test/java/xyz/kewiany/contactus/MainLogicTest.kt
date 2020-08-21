@@ -7,13 +7,14 @@ import xyz.kewiany.contactus.logic.MainLogic
 internal class MainLogicTest : CustomFreeSpec({
     var result: Boolean? = null
 
-    "test" - {
+    beforeTest {
         testDispatcher.runBlockingTest {
             result = MainLogic(testDispatcherProvider)
         }
+    }
 
-        "assertion" {
-            result shouldBe true
-        }
+    "test" - {
+
+        "assertion" { result shouldBe true }
     }
 })
