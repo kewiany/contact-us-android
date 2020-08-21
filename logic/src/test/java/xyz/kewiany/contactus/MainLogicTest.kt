@@ -17,13 +17,13 @@ internal class MainLogicTest : CustomFunSpec({
 
     test("set loading to true") {
         run()
-        stateT.state.commonViewState.isLoading shouldBe true
+        stateT.state.commonViewState.isLoading.value shouldBe true
     }
 
     test("set loading to false after 1000 milliseconds") {
         run()
         testScope.advanceTimeBy(1000)
-        stateT.state.commonViewState.isLoading shouldBe false
+        stateT.state.commonViewState.isLoading.value shouldBe false
     }
 })
 

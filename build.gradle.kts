@@ -5,6 +5,7 @@ buildscript {
     extra["constraintLayout"] = Library.AndroidX.constraintLayout
     extra["coroutinesCore"] = Library.coroutinesCore
     extra["coroutinesRX2"] = Library.coroutinesRX2
+    extra["rxRelay"] = Library.rxRelay
 
     extra["kotestFramework"] = TestLibrary.Kotest.framework
     extra["kotestAssertions"] = TestLibrary.Kotest.assertions

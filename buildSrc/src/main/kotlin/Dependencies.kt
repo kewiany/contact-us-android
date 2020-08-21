@@ -18,6 +18,7 @@ object Library {
 
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinx_coroutines}"
     const val coroutinesRX2 = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${Versions.kotlinx_coroutines}"
+    const val rxRelay = "com.jakewharton.rxrelay3:rxrelay:3.0.0"
 }
 
 object TestLibrary {
