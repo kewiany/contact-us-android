@@ -6,6 +6,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import xyz.kewiany.contactus.logic.MenuAction
 import xyz.kewiany.contactus.logic.MenuAction.SelectBack
+import xyz.kewiany.contactus.logic.MenuAction.SelectFAQ
 import xyz.kewiany.contactus.logic.MenuLogic
 import xyz.kewiany.contactus.logic.MenuViewState
 
@@ -28,5 +29,11 @@ internal class MenuLogicTest : CustomFunSpec({
         run()
         actions.accept(SelectBack)
         logic?.isCompleted shouldBe true
+    }
+
+    test("do not finish logic on select faq") {
+        run()
+        actions.accept(SelectFAQ)
+        logic?.isCompleted shouldBe false
     }
 })
