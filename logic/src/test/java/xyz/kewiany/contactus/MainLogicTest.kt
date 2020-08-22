@@ -1,17 +1,23 @@
 package xyz.kewiany.contactus
 
+import com.jakewharton.rxrelay3.PublishRelay
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.launch
 import xyz.kewiany.contactus.logic.MainLogic
+import xyz.kewiany.contactus.logic.common.Action
 import xyz.kewiany.contactus.logic.common.MainViewState
 
 internal class MainLogicTest : CustomFunSpec({
+    val actions = PublishRelay.create<Action>()
     val state = MainViewState()
     val stateT = MainStateT(state)
 
     fun run() {
         testScope.launch {
-            state.MainLogic(testDispatcherProvider)
+            state.MainLogic(
+                actions,
+                testDispatcherProvider
+            )
         }
     }
 

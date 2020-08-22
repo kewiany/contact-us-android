@@ -29,6 +29,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":logic"))
 }
 
 tasks.withType<Test> {
