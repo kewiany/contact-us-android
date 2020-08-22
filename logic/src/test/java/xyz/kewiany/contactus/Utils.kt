@@ -2,9 +2,9 @@ package xyz.kewiany.contactus
 
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.observers.TestObserver
-import xyz.kewiany.contactus.logic.FAQViewState
-import xyz.kewiany.contactus.logic.MenuViewState
 import xyz.kewiany.contactus.logic.common.MainViewState
+import xyz.kewiany.contactus.logic.faq.FAQViewState
+import xyz.kewiany.contactus.logic.menu.MenuViewState
 
 class MainStateT(val state: MainViewState)
 class MenuViewStateT(val state: MenuViewState)

@@ -4,10 +4,10 @@ import com.jakewharton.rxrelay3.PublishRelay
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import xyz.kewiany.contactus.logic.FAQAction
-import xyz.kewiany.contactus.logic.FAQAction.SelectBack
-import xyz.kewiany.contactus.logic.FAQLogic
-import xyz.kewiany.contactus.logic.FAQViewState
+import xyz.kewiany.contactus.logic.faq.FAQAction
+import xyz.kewiany.contactus.logic.faq.FAQAction.SelectBack
+import xyz.kewiany.contactus.logic.faq.FAQLogic
+import xyz.kewiany.contactus.logic.faq.FAQViewState
 
 
 internal class FAQLogicTest : CustomFunSpec({

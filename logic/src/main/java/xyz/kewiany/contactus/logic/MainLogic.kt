@@ -8,6 +8,7 @@ import xyz.kewiany.contactus.core.DefaultDispatcherProvider
 import xyz.kewiany.contactus.core.DispatcherProvider
 import xyz.kewiany.contactus.logic.common.Action
 import xyz.kewiany.contactus.logic.common.MainViewState
+import xyz.kewiany.contactus.logic.menu.MenuLogic
 
 suspend fun MainViewState.MainLogic(
     actions: Observable<Action>,

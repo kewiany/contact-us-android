@@ -1,4 +1,4 @@
-package xyz.kewiany.contactus.logic
+package xyz.kewiany.contactus.logic.faq
 
 import io.reactivex.rxjava3.core.Observable
 import kotlinx.coroutines.rx3.awaitFirst

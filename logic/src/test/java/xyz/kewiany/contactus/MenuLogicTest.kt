@@ -4,11 +4,11 @@ import com.jakewharton.rxrelay3.PublishRelay
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import xyz.kewiany.contactus.logic.MenuAction
-import xyz.kewiany.contactus.logic.MenuAction.SelectBack
-import xyz.kewiany.contactus.logic.MenuAction.SelectFAQ
-import xyz.kewiany.contactus.logic.MenuLogic
-import xyz.kewiany.contactus.logic.MenuViewState
+import xyz.kewiany.contactus.logic.menu.MenuAction
+import xyz.kewiany.contactus.logic.menu.MenuAction.SelectBack
+import xyz.kewiany.contactus.logic.menu.MenuAction.SelectFAQ
+import xyz.kewiany.contactus.logic.menu.MenuLogic
+import xyz.kewiany.contactus.logic.menu.MenuViewState
 
 internal class MenuLogicTest : CustomFunSpec({
     val actions = PublishRelay.create<MenuAction>()

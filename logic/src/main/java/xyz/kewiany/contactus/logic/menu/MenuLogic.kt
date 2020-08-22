@@ -1,4 +1,4 @@
-package xyz.kewiany.contactus.logic
+package xyz.kewiany.contactus.logic.menu
 
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.kotlin.ofType
@@ -7,6 +7,8 @@ import xyz.kewiany.contactus.core.DefaultDispatcherProvider
 import xyz.kewiany.contactus.core.DispatcherProvider
 import xyz.kewiany.contactus.logic.common.Action
 import xyz.kewiany.contactus.logic.common.ViewState
+import xyz.kewiany.contactus.logic.faq.FAQLogic
+import xyz.kewiany.contactus.logic.faq.FAQViewState
 
 sealed class MenuAction : Action {
     object SelectBack : MenuAction()
