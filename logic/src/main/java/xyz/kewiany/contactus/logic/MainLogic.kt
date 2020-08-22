@@ -1,6 +1,7 @@
 package xyz.kewiany.contactus.logic
 
 import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.kotlin.ofType
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import xyz.kewiany.contactus.core.DefaultDispatcherProvider
@@ -17,5 +18,6 @@ suspend fun MainViewState.MainLogic(
         delay(1000)
         commonViewState.isLoading.accept(false)
     }
+    menuState.MenuLogic(actions.ofType())
     return true
 }

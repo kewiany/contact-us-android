@@ -3,4 +3,5 @@ dependencies {
     implementation coroutinesCore
     implementation coroutinesRX2
     implementation rxRelay
+    implementation rxKotlin
 }

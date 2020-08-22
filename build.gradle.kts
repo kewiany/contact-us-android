@@ -6,6 +6,7 @@ buildscript {
     extra["coroutinesCore"] = Library.coroutinesCore
     extra["coroutinesRX2"] = Library.coroutinesRX2
     extra["rxRelay"] = Library.rxRelay
+    extra["rxKotlin"] = Library.rxKotlin
 
     extra["kotestFramework"] = TestLibrary.Kotest.framework
     extra["kotestAssertions"] = TestLibrary.Kotest.assertions
