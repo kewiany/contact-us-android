@@ -5,8 +5,7 @@ import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import xyz.kewiany.contactus.logic.menu.MenuAction
-import xyz.kewiany.contactus.logic.menu.MenuAction.SelectBack
-import xyz.kewiany.contactus.logic.menu.MenuAction.SelectFAQ
+import xyz.kewiany.contactus.logic.menu.MenuAction.*
 import xyz.kewiany.contactus.logic.menu.MenuLogic
 import xyz.kewiany.contactus.logic.menu.MenuViewState
 
@@ -29,6 +28,12 @@ internal class MenuLogicTest : CustomFunSpec({
         run()
         actions.accept(SelectBack)
         logic?.isCompleted shouldBe true
+    }
+
+    test("do not finish logic on select create ticket") {
+        run()
+        actions.accept(SelectCreateTicket)
+        logic?.isCompleted shouldBe false
     }
 
     test("do not finish logic on select faq") {
