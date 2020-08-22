@@ -8,6 +8,9 @@ import xyz.kewiany.contactus.logic.common.MainViewState
 
 class MainStateT(val state: MainViewState)
 class MenuViewStateT(val state: MenuViewState)
-class FAQViewStateT(val state: FAQViewState)
+class FAQViewStateT(private val state: FAQViewState) {
+    val items = state.items.T
+}
 
+val <S : Any> TestObserver<S>.value: S get() = values().last()
 private val <S : Any> Observable<S>.T: TestObserver<S> get() = test()

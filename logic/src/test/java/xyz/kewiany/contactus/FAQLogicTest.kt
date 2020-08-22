@@ -24,6 +24,12 @@ internal class FAQLogicTest : CustomFunSpec({
         }
     }
 
+    test("set two items on init") {
+        run()
+        stateT.items.value shouldBe listOf("one", "two")
+        stateT.items.value.count() shouldBe 2
+    }
+
     test("finish logic on select back") {
         run()
         actions.accept(FAQAction.SelectBack)

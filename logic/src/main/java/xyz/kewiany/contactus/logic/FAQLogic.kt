@@ -13,12 +13,13 @@ sealed class FAQAction : Action {
 }
 
 class FAQViewState : ViewState {
-    var items = createState<List<String>>()
+    val items = createState<List<String>>()
 }
 
 suspend fun FAQViewState.FAQLogic(
     actions: Observable<FAQAction>,
     dispatchers: DispatcherProvider = DefaultDispatcherProvider()
 ) {
+    listOf("one", "two").also(items::accept)
     actions.awaitFirst()
 }
