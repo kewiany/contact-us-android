@@ -1,6 +1,7 @@
 package xyz.kewiany.contactus
 
 import com.jakewharton.rxrelay3.PublishRelay
+import io.kotest.assertions.asClue
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -36,27 +37,37 @@ internal class CreateTicketEntryLogicTest : CustomFunSpec({
         logic?.isCompleted shouldBe true
     }
 
+    test("set input error none on each on init") {
+        run()
+        state.asClue {
+            state.emailError.value shouldBe InputError.NONE
+            state.nameError.value shouldBe InputError.NONE
+            state.countryError.value shouldBe InputError.NONE
+            state.topicError.value shouldBe InputError.NONE
+        }
+    }
+
     test("set input error none on change email") {
         run()
         actions.accept(ChangeEmail(email))
-        state.emailInputError.value shouldBe InputError.NONE
+        state.emailError.value shouldBe InputError.NONE
     }
 
     test("set input error none on change name") {
         run()
         actions.accept(ChangeName(name))
-        state.nameInputError.value shouldBe InputError.NONE
+        state.nameError.value shouldBe InputError.NONE
     }
 
     test("set input error none on select country") {
         run()
         actions.accept(SelectCountry(countryPosition))
-        state.countryInputError.value shouldBe InputError.NONE
+        state.countryError.value shouldBe InputError.NONE
     }
 
     test("set input error none on select topic") {
         run()
         actions.accept(SelectTopic(topicPosition))
-        state.topicInputError.value shouldBe InputError.NONE
+        state.topicError.value shouldBe InputError.NONE
     }
 })

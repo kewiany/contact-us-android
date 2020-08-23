@@ -20,28 +20,48 @@ sealed class CreateTicketEntryAction : Action {
 }
 
 class CreateTicketEntryViewState : ViewState {
-    val emailInputError = createState<InputError>()
-    val nameInputError = createState<InputError>()
-    val countryInputError = createState<InputError>()
-    val topicInputError = createState<InputError>()
+    val emailError = createState<InputError>()
+    val nameError = createState<InputError>()
+    val countryError = createState<InputError>()
+    val topicError = createState<InputError>()
 }
 
 suspend fun CreateTicketEntryViewState.CreateTicketEntryLogic(
     actions: Observable<CreateTicketEntryAction>,
     dispatchers: DispatcherProvider = DefaultDispatcherProvider()
 ) {
-    when (actions.awaitFirst()) {
+    var email = "";
+    var name = ""
+    var countryPosition = 0
+    var topicPosition = 0
+
+    emailError.accept(InputError.NONE)
+    nameError.accept(InputError.NONE)
+    countryError.accept(InputError.NONE)
+    topicError.accept(InputError.NONE)
+
+    logic@ while (true) when (val action = actions.awaitFirst()) {
+        SelectBack -> {
+            break@logic
+        }
+        SelectNext -> {
+            continue@logic
+        }
         is ChangeEmail -> {
-            emailInputError.accept(InputError.NONE)
+            email = action.value
+            emailError.accept(InputError.NONE)
         }
         is ChangeName -> {
-            nameInputError.accept(InputError.NONE)
+            name = action.value
+            nameError.accept(InputError.NONE)
         }
         is SelectCountry -> {
-            countryInputError.accept(InputError.NONE)
+            countryPosition = action.position
+            countryError.accept(InputError.NONE)
         }
         is SelectTopic -> {
-            topicInputError.accept(InputError.NONE)
+            topicPosition = action.position
+            topicError.accept(InputError.NONE)
         }
     }
 }
